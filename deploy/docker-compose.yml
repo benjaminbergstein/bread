@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app:
+    image: 'benbergstein/bread:latest'
+    command: ["serve"]
+    volumes:
+       - ./:/app
+    networks:
+       - haproxy-controller_haproxy-controller
+
+networks:
+   haproxy-controller_haproxy-controller:
+      external: true
