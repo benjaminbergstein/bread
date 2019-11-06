@@ -1,9 +1,5 @@
 import React from 'react';
 
-interface CompProps {
-  tag: keyof JSX.IntrinsicElements;
-}
-
 const Row: React.FC<{tag?: string, children: any}> = ({ tag, children }) => {
   const Tag = (tag || 'div') as "div" | "label";
 
@@ -14,8 +10,11 @@ const Row: React.FC<{tag?: string, children: any}> = ({ tag, children }) => {
   );
 };
 
-const Column: React.FC<{children: any}> = ({ children }) => (
-  <div style={{ flex: '1' }}>{children}</div>
+const Column: React.FC<{children: any, right?: boolean | undefined}> = ({ children, right }) => (
+  <div style={{
+    flex: '1',
+    textAlign: right ? 'right' : undefined,
+  }}>{children}</div>
 );
 
 export { Row, Column };

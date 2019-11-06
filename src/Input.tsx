@@ -12,7 +12,7 @@ const Input: React.FC<{fieldName: string, value: number, onChange: any }> = ({
   return (
     <Row tag="label">
       <Column>{humanName}</Column>
-      <Column>
+      <Column right>
         <input id={fieldName} type="number" value={value} onChange={onChange} />
       </Column>
     </Row>
