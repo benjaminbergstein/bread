@@ -46,6 +46,29 @@ const App: React.FC = () => {
       margin: '30px 30% 0',
     }}>
       <div>
+        <div style={{
+          color: '#474a4a',
+          marginBottom: '2rem',
+        }}>
+          <h1
+            style={{
+              fontSize: '1.2rem',
+              color: '#474a4a',
+            }}>
+            Bread dough recipe generator
+          </h1>
+          <h3
+            style={{
+              fontSize: '0.8rem',
+              fontWeight: 500,
+              color: '#676a6a',
+            }}>
+            The most important questions are, how many loaves
+            do you want & how big (Total Dough Weight), and how
+            difficult do you want the dough to handle (Hydration).
+          </h3>
+        </div>
+
         <Row>
           <Column>Preset</Column>
           <Column right>
@@ -57,21 +80,22 @@ const App: React.FC = () => {
           </Column>
         </Row>
 
-        <hr/>
-
         <form onSubmit={handleSubmit}>
-          <div>Yields: {recipeInput.yield}</div>
+          <Row>
+            <Column>Yields</Column>
+            <Column right>
+              {recipeInput.yield}
+            </Column>
+          </Row>
           {Object.entries(recipeInput).map(([fieldName, value]) => fieldName != 'yield' && (
             <Input fieldName={fieldName} value={value} onChange={(e: any) => updateRecipeInput(fieldName, e.target.value)} />
           ))}
 
-          <hr/>
           <Row>
             <Column right>
               <button>Calculate</button>
             </Column>
           </Row>
-          <hr/>
 
           {Object.entries(recipe).map(([fieldName, value]) => (
             <Row>
