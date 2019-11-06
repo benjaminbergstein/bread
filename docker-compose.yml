@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  app:
+    image: 'benbergstein/bread:latest'
+    ports:
+      - "9000:3000"
+    volumes:
+      - ./:/app
