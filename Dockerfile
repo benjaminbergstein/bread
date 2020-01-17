@@ -8,5 +8,7 @@ RUN yarn
 
 ADD . /app
 
+RUN mkdir build
+
 ENTRYPOINT ["yarn"]
 CMD ["start"]

@@ -4,13 +4,13 @@ endef
 
 .PHONY: deploy
 
+deploy: start build
 build:
 	${COMPOSE_CMD} exec app yarn build
 
 start:
 	${COMPOSE_CMD} up -d app
 
-deploy: start build
 redeploy: undeploy deploy
 
 undeploy:
