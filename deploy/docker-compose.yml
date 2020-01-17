@@ -4,8 +4,6 @@ services:
   app:
     image: 'benbergstein/bread:latest'
     command: ["serve"]
-    volumes:
-       - ./:/app
     networks:
        - haproxy-controller_haproxy-controller
 
