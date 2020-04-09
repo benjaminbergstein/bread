@@ -12,7 +12,7 @@ export const recipeFromInput = (recipeInput: RecipePercentInput) => {
   } = recipeInput;
 
   const scaledDoughWeight = totalDoughWeight * scale / 100;
-  const salt : number = (percent(saltPercent) * scaledDoughWeight) / (1 + percent(saltPercent))
+  const salt : number = (percent(percent(saltPercent) * scaledDoughWeight) / (1 + percent(percent((saltPercent)))))
   const coreIngredientWeight : number = scaledDoughWeight- salt;
   const dryWeight : number = coreIngredientWeight / (1 + percent(hydrationPercent));
   const wetWeight : number = coreIngredientWeight - dryWeight;
